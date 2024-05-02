@@ -3429,25 +3429,27 @@ static bool ipv4_is_broadcast_address(struct net_if *iface,
 	ipv4 = iface->config.ip.ipv4;
 	if (!ipv4) {
 		ret = false;
-		goto out;
 	}
+	else{
 
-	ARRAY_FOR_EACH(ipv4->unicast, i) {
-		if (!ipv4->unicast[i].ipv4.is_used ||
-		    ipv4->unicast[i].ipv4.address.family != AF_INET) {
-			continue;
-		}
+		ARRAY_FOR_EACH(ipv4->unicast, i) {
+			if (!ipv4->unicast[i].ipv4.is_used ||
+				ipv4->unicast[i].ipv4.address.family != AF_INET) {
+				continue;
+			}
 
-		bcast.s_addr = ipv4->unicast[i].ipv4.address.in_addr.s_addr |
-			       ~ipv4->unicast[i].netmask.s_addr;
+			bcast.s_addr = ipv4->unicast[i].ipv4.address.in_addr.s_addr |
+					~ipv4->unicast[i].netmask.s_addr;
 
-		if (bcast.s_addr == addr->s_addr) {
 			ret = true;
-			goto out;
+			
+			for (uint8_t j = 0; j<4 && ret != false; j++)
+				if (bcast.s4_addr[j] != addr->s4_addr[j])
+					ret = false;
 		}
+
 	}
 
-out:
 	net_if_unlock(iface);
 	return ret;
 }
