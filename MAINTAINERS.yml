@@ -244,6 +244,7 @@ Ambiq Platforms:
   status: odd fixes
   collaborators:
     - aaronyegx
+    - HaoLuo
     - RichardSWheatley
   files:
     - soc/ambiq/
@@ -446,6 +447,7 @@ Bluetooth Audio:
     - tests/bluetooth/audio/
     - tests/bsim/bluetooth/audio/
     - tests/bluetooth/shell/audio.conf
+    - tests/bluetooth/tester/overlay-le-audio.conf
     - doc/connectivity/bluetooth/api/audio/
     - samples/bluetooth/broadcast_audio*/
     - samples/bluetooth/hap*/
@@ -1233,6 +1235,7 @@ Release Notes:
   status: odd fixes
   collaborators:
     - decsny
+    - lmajewski
   files:
     - drivers/ethernet/
     - include/zephyr/dt-bindings/ethernet/
@@ -1321,6 +1324,9 @@ Release Notes:
   status: maintained
   maintainers:
     - bjarki-trackunit
+  collaborators:
+    - tomi-font
+    - fabiobaltieri
   files:
     - doc/hardware/peripherals/gnss.rst
     - drivers/gnss/
@@ -3818,7 +3824,7 @@ TF-M Integration:
   maintainers:
     - d3zd3z
   collaborators:
-    - SebastianBoe
+    - Vge0rge
     - ithinuel
   files:
     - samples/tfm_integration/
@@ -4676,7 +4682,7 @@ West:
   maintainers:
     - d3zd3z
   collaborators:
-    - SebastianBoe
+    - Vge0rge
     - ithinuel
   files:
     - modules/trusted-firmware-m/
@@ -4688,7 +4694,7 @@ West:
   maintainers:
     - d3zd3z
   collaborators:
-    - SebastianBoe
+    - Vge0rge
     - ithinuel
   files: []
   labels:
@@ -4712,7 +4718,7 @@ West:
   maintainers:
     - d3zd3z
   collaborators:
-    - SebastianBoe
+    - Vge0rge
     - ithinuel
   files: []
   labels:
